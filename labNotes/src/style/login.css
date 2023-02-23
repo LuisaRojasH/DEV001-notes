@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+background: #000000;
+}
+
+.login {
+  background: black;
+  color: #FEDC82;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  width: 80%;
+  height: auto;
+  border: 5px solid #FEDC82;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divLogin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleLogin {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 50px;
+  color: #FEDC82;
+}
+
+.errorLogin {
+  margin: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  color: red;
+}
+
+.inputEmailLogin{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inptuPasswordLogin{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelsLogin {
+  margin-bottom: 1%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 25px;
+  color: #FEDC82;
+}
+
+.inputsLogin {
+  width: 512px;
+  height: 40px;
+  background: #000000;
+  color: #FEDC82;
+  border: 3px solid #FEDC82;
+  border-radius: 10px;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnLogin {
+  margin-top: 2%;
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  background: #FEDC82;
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+}
+.divOption{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+
+}
+.decoration{
+  text-decoration-line: line-through;
+  text-decoration-color: #FEDC82;
+  font-size: 20px;
+  color:#000000;
+}
+.option {
+  margin-top: 5%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  color: #FEDC82;
+}
+.divGoogle{
+  display: flex;
+  flex-direction: row;
+  width: 36%;
+  height: auto;
+}
+.btnGoogle {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  border: none;
+  background: #000000;
+  font-size: 32px;
+}
+.loginGoogle{
+  margin: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.links {
+  margin: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+}
+
+::placeholder{
+  padding-left: 2%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+}
