@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: #000000;
+}
+
+.register {
+  background: black;
+  color: #FEDC82;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  width: 80%;
+  height: auto;
+  border: 5px solid #FEDC82;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleRegister {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 50px;
+  color: #FEDC82;
+}
+
+.errorRegister {
+  margin: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  color: red;
+}
+
+.formRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputEmailRegister {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputPasswordRegister {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelsRegister {
+  margin-bottom: 1%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 25px;
+  color: #FEDC82;
+}
+
+.inputsRegister {
+  width: 512px;
+  height: 40px;
+  background: #000000;
+  color: #FEDC82;
+  border: 3px solid #FEDC82;
+  border-radius: 10px;
+}
+
+.btnRegister {
+  margin: 2%;
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  background: #FEDC82;
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.links {
+  margin: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+}
+
+::placeholder {
+  padding-left: 2%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+}

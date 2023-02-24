@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+background: #000000;
+}
+.divTitleHome{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.user_logOut {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 45%;
+}
+.userName{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 25px;
+  color: white;
+  padding: 3%;
+}
+.btnLogOut {
+  color: #FEDC82;
+  border: none;
+  background: #000000;
+  font-size: 30px;
+}
+.titleHome{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 25px;
+  color: #FEDC82;
+  padding: 3%;
+}
