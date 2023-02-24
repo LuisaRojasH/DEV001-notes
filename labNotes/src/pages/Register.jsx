@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useAuth } from '../context/authContext'
 import { useNavigate, Link } from 'react-router-dom'
+import { SlNote } from "react-icons/sl";
 
 export default function Register() {
   const { signUp } = useAuth();
@@ -39,30 +40,33 @@ export default function Register() {
 
   return (
     <div className="register">
+      <div className="divRegister">
+        <h1 className="titleRegister"><SlNote /> Notes</h1>
 
-      {error && <p>{error}</p>}
-      <div className="formRegister">
-        <form onSubmit={handleSubmit}>
-          <div className="emailInput">
-            <label className="labels" htmlFor='email'>Email</label>
+        {error && <p className="errorRegister">{error}</p>}
+
+
+        <form className="formRegister" onSubmit={handleSubmit}>
+          <div className="inputEmailRegister">
+            <label className="labelsRegister" htmlFor='email'>Email</label>
             <input
-              className="inputs"
+              className="inputsRegister"
               type='email'
               name='email'
               placeholder='youremail@company.com'
               onChange={handleChange} />
           </div>
-          <div className="passwordInput">
-            <label className="labels" htmlFor='password'>Password</label>
+          <div className="inputPasswordRegister">
+            <label className="labelsRegister" htmlFor='password'>Password</label>
             <input
-              className="inputs"
+              className="inputsRegister"
               type='password'
               name='password'
               id='password'
               placeholder='******'
               onChange={handleChange} />
           </div>
-          <button className="buttons">Register</button>
+          <button className="btnRegister">Register</button>
         </form>
       </div>
       <p className="links">Already have an Account?

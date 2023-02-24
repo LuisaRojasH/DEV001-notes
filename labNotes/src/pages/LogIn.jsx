@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from '../context/authContext'
 import { useNavigate, Link } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
+import { SlNote } from "react-icons/sl";
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -52,9 +53,7 @@ export default function Login() {
     <div className="login">
       <div className="divLogin">
 
-        <h1 className="titleLogin">Notes</h1>
-
-
+        <h1 className="titleLogin"><SlNote /> Notes</h1>
 
         <form className="formLogin" onSubmit={handleSubmit}>
 
@@ -84,17 +83,17 @@ export default function Login() {
         </form>
       </div>
       <div className="divOption">
-      <p className="decoration">OOOOOOOOOOOOOO</p>
-      <h2 className="option">O</h2>
-      <p className="decoration">OOOOOOOOOOOOOO</p>
+        <p className="decoration">OOOOOOOOOOOOOO</p>
+        <h2 className="option">O</h2>
+        <p className="decoration">OOOOOOOOOOOOOO</p>
       </div>
       <div className="divGoogle">
-      <button
-        className="btnGoogle"
-        onClick={handleGoogleSignin}>
-        <FcGoogle />
-      </button>
-      <p className="loginGoogle">Login with Google</p>
+        <button
+          className="btnGoogle"
+          onClick={handleGoogleSignin}>
+          <FcGoogle />
+        </button>
+        <p className="loginGoogle">Login with Google</p>
       </div>
 
       <p className="links"> Dont have an account?
