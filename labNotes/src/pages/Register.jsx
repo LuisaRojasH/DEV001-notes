@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useAuth } from '../context/authContext'
+import { useAuth } from '../firebase/authContext'
 import { useNavigate, Link } from 'react-router-dom'
 import { SlNote } from "react-icons/sl";
 
