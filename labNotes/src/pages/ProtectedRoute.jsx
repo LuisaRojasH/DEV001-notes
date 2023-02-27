@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { useAuth } from '../context/authContext'
+import { useAuth } from '../firebase/authContext'
 import { Navigate } from 'react-router-dom'
 
 export function ProtectedRoute({children}){

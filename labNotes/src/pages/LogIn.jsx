@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useAuth } from '../context/authContext'
+import { useAuth } from '../firebase/authContext'
 import { useNavigate, Link } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { SlNote } from "react-icons/sl";

@@ -5,7 +5,7 @@ import Error404 from './pages/Error404'
 import Register from './pages/Register'
 import { ProtectedRoute } from './pages/ProtectedRoute'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { AuthProvaider } from './context/authContext'
+import { AuthProvaider } from './firebase/authContext'
 
 
 
