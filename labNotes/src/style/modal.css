@@ -11,7 +11,7 @@
 
 .modalBody {
   border: solid 3px #FEDC82;
-  background: #0000;
+  background: #000000;
   width: 80%;
   min-width: 400px;
   border-radius: 1rem;
@@ -87,4 +87,22 @@
   font-size: 16px;
   size: 300;
   margin-top: 1%;
+}
+
+.btnSave {
+  margin-top: 2%;
+  margin-left: 5%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #FEDC82;
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.btnsContainer{
+  margin: 2%;
+  display: flex;
 }
