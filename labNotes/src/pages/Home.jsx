@@ -1,28 +1,36 @@
+import '../style/home.css'
 import React from "react";
 import { useState, useEffect } from 'react'
 import { useAuth } from '../firebase/authContext'
 import { SlNote, SlLogout } from "react-icons/sl";
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import Modal from "./Modal";
-import { getNotes } from '../firebase/firestore'
+import ModalEdit from './ModalEdit';
+import { getAllNotes, deleteNote, } from "../firebase/firestore";
 
 export default function Home() {
 
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([])
+  const [show, setShow] = useState(false)
+  const [currentId, setCurrentId] = useState ('');
+  const { user, logOut } = useAuth()
 
-  const getAllNotes = async () => {
-    const querySnapshot = await getNotes();
-    const docs = [];
-    querySnapshot.forEach((doc) => {
-      doc.push({ ...doc.data(), id: doc.id })
+  const updateStateNotes = () => {
+    getAllNotes().then((notes) => {
+      setNotes(notes);
     });
-    setNotes(docs);
   }
 
   useEffect(() => {
-    getAllNotes
+    updateStateNotes();
   }, []);
 
-  const { user, logOut } = useAuth()
+  const deleteN = async (id) => {
+    if (window.confirm('are you sure you want to delete this link?')) {
+      await deleteNote(id);
+      updateStateNotes()
+    }
+  }
 
   const handleLogOut = async () => {
     try {
@@ -32,30 +40,52 @@ export default function Home() {
     }
   };
 
-  const [show, setShow] = useState(false)
-
   return (
     <div>
       <div className="divTitleHome">
-        <div className="user_logOut">
-          <h1 className="userName">{user.displayName || user.email}</h1>
-          <button className="btnLogOut" onClick={handleLogOut}><SlLogout /></button>
-        </div>
+
+        <h1 className="userName">{user.displayName || user.email}</h1>
         <h1 className="titleHome"><SlNote /> Notes</h1>
+        <button className="btnLogOut" onClick={handleLogOut}><SlLogout /></button>
+
       </div>
-      <button onClick={() => setShow(true)}>Add Note</button>
-      <Modal isOpen={show} onClose={() => setShow(false)} />
+      <button className="btnAddNote" onClick={() => setShow(true)}>+</button>
+      <Modal
+        update={updateStateNotes}
+        isOpen={show}
+        onClose={() => setShow(false)}
+      />
+        <ModalEdit
+         notes={notes}
+         currentId={currentId}
+         setCurrentId={setCurrentId}
+          update={updateStateNotes}
+          isOpenEdit={show}
+          onCloseEdit={() => setShow(false)}>
+        </ModalEdit>
       <div>
-        <h1>notas</h1>
-      <>
-        {notes.map((note) => (
-          <div key={note.id}>
-            
-          </div>
-        ))}
-      </>
+        <div className="cardContainer">
+          {notes.map(note => (
+            <div className="cardNote" key={note.id}>
+              <p className="date">{note.date}</p>
+              <h3>{note.title}</h3>
+              <p>{note.note}</p>
+              <button 
+              className='btnEdit'
+              onClick={() => {
+                setCurrentId(note.id)
+                setShow(true);
+              }}><FiEdit2 /></button>
+              <button 
+              className='btnDelete'
+              onClick={(e) => {
+                e.stopPropagation()
+                deleteN(note.id);
+              }}><FiTrash2 /></button>
+            </div>
+          ))}
+        </div>
       </div>
-      
     </div>
   )
 }

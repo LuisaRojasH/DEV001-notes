@@ -2,38 +2,97 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+
 body {
-background: #000000;
+  background: #000000;
 }
-.divTitleHome{
+
+.divTitleHome {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: auto;
 }
-.user_logOut {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 45%;
-}
-.userName{
+
+
+.userName {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: normal;
-  font-size: 25px;
+  font-size: 30px;
   color: white;
-  padding: 3%;
+  margin: 5%;
 }
+
 .btnLogOut {
   color: #FEDC82;
   border: none;
   background: #000000;
-  font-size: 30px;
+  font-size: 35px;
+  margin: 5%;
 }
-.titleHome{
+
+.titleHome {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 30px;
+  color: #FEDC82;
+  margin: 5%;
+}
+
+.btnAddNote {
+  margin-top: 2%;
+  margin-left: 5%;
+  width: 9%;
+  border-radius: 100%;
+  background: #FEDC82;
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.btnEdit {
+  margin: 3%;
+  width: 30%;
+  height: auto;
+  border: none;
+  background: #FE9E86;
+  color: #6F6F6F;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: normal;
   font-size: 25px;
-  color: #FEDC82;
-  padding: 3%;
+}
+
+.btnDelete {
+  margin: 3%;
+  width: 30%;
+  height: auto;
+  border: none;
+  background: #FE9E86;
+  color: #6F6F6F;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 5%;
+}
+
+.cardNote {
+  min-height: 180px;
+  background: #FE9E86;
+  border-radius: 30px;
+  padding: 5%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+}
+
+.date {
+  color: #6F6F6F;
 }

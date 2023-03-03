@@ -1,39 +1,62 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useEffect } from "react";
 import '../style/modal.css'
 import { IoClose } from "react-icons/io5"
 import { useState } from 'react'
-import { saveNote } from '../firebase/firestore'
+import { getNote, updateNote } from '../firebase/firestore'
 
-export default function Modal({ isOpen, onClose, update }) {
+export default function ModalEdit({
+  isOpenEdit,
+  onCloseEdit,
+  update,
+  currentId,
+  setCurrentId,
+}) {
 
   const ts = new Date();
   const currentDate = ts.toLocaleString();
-
+  
   const initialState = {
     title: '',
     note: '',
     date: '',
   }
-  const [values, setValues] = useState(initialState)
+
+  const [values, setValues] = useState({ initialState })
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value, date: currentDate })
   }
 
+  const getOneNote = async (id) => {
+    try {
+      const docSnap = await getNote(id);
+      setValues({...docSnap.data()})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    if(currentId === ''){
+      setValues({...initialState})
+    } else {
+      getOneNote(currentId)
+    }
+  }, [currentId]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    saveNote(values);
+    updateNote(currentId, values);
     update();
-    onClose();
-    setValues(initialState);
+    setCurrentId('');
+    onCloseEdit();
   }
 
   return (
-    <div className="modalContainer" style={{ display: isOpen ? 'grid' : 'none' }}>
+    <div className="modalContainer" style={{ display: isOpenEdit ? 'grid' : 'none' }}>
       <div className="modalBody">
-        <button onClick={onClose} className="btnClose"><IoClose /></button>
+        <button onClick={onCloseEdit} className="btnClose"><IoClose /></button>
         <form className="formNotes" onSubmit={handleSubmit}>
           <div className="TitleNote">
             <label className="labelsNote">Title</label>
@@ -58,7 +81,7 @@ export default function Modal({ isOpen, onClose, update }) {
             </textarea>
           </div>
           <div className="buttonsContainer">
-            <button className="btnSave" type="submit">save</button>
+            <button className="btnEdit" type="submit">Edit</button>
           </div>
         </form>
       </div>
