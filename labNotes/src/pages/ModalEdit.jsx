@@ -48,8 +48,8 @@ export default function ModalEdit({
   const handleSubmit = (e) => {
     e.preventDefault();
     updateNote(currentId, values);
-    update();
     setCurrentId('');
+    update();
     onCloseEdit();
   }
 
@@ -81,7 +81,7 @@ export default function ModalEdit({
             </textarea>
           </div>
           <div className="buttonsContainer">
-            <button className="btnEdit" type="submit">Edit</button>
+            <button className="btnEditNote" type="submit">Edit</button>
           </div>
         </form>
       </div>
