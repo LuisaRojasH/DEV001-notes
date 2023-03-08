@@ -102,6 +102,19 @@
   font-size: 18px;
 }
 
+.btnEditNote{
+  margin-top: 2%;
+  margin-left: 5%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #FEDC82;
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+}
+
 .btnsContainer{
   margin: 2%;
   display: flex;

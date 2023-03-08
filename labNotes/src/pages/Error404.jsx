@@ -1,10 +1,14 @@
 import React from "react";
-import {useAuth} from '../firebase/authContext'
+import { useRouteError, Link } from 'react-router-dom'; 
 
 export default function Error404() {
-  const authContext = useAuth()
-  console.log(authContext)
+  const error = useRouteError();
     return (
-        <div>Error 404</div>
+      <div>
+      <h1>404</h1>
+      <p>Page not found</p>
+      <p>{error.statusText || error.message}</p>
+      <Link to="/">Return to Home</Link>
+    </div>
     )
 }
